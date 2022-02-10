@@ -1,0 +1,967 @@
+// fonte Roboto google
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+// Configurações iniciais
+
+*{
+   font-family: 'Roboto', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;  
+   outline: none; border:none;
+   text-decoration: none;
+   transition: all .2s linear;  
+}
+
+:root {
+--modal-duration: 1s;
+--modal-color: #428bca;
+}
+
+img{
+   user-select: none;
+}
+
+// Variáveis SASS cores
+
+$red: red;
+$green:#0eb582;
+$light-green:#f0fdfa;
+$light-color:#C4C4C4;
+$light-white:#eee;
+$light-black:#262626;
+$black:black;
+$white:#fff;
+$border:.1rem solid $green;
+$box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+$graytext: #989898;
+$blueselect: linear-gradient(#0056A6, #0587FF);
+$bluelk:#0587FF;
+$orang_anim:#FD8C73;
+$graybck:#F8F8F8;
+
+// Funções SASS
+
+@mixin grid($val) {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+   gap:2rem;
+}
+
+@mixin titleText($titleSize) {
+   font-size: $titleSize;
+   text-transform: capitalize;
+   color:$black;
+}
+
+
+@mixin graphText($graphSize) {
+   font-size: $graphSize;
+   line-height: 2;
+   color:$light-color;
+}
+
+// Configurações Page
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   
+   &::-webkit-scrollbar{
+      width:1rem;
+   }
+
+   &::-webkit-scrollbar-track{
+      background: transparent;
+   }
+
+   &::-webkit-scrollbar-thumb{
+      background: $light-white;
+   }
+}
+
+section{
+   padding:5rem 10%;
+}
+
+// Estilo Navbar
+
+.header {
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+   left: 0;
+   right: 0;
+   background: $black;
+   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+   padding: 2rem 10%;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+      -ms-flex-align: center;
+         align-items: center;
+   z-index: 1000;
+}
+
+.header .navbar {
+   position: relative;
+}
+
+.header .logo {
+   margin-right: auto;
+   font-size: 2.10rem;
+   text-transform: capitalize;
+   color: $white;
+   display: flex;
+   flex-direction: row;
+}
+
+.header .navbar #close-navbar {
+   position: absolute;
+   top: 1.5rem;
+   right: 2rem;
+   font-size: 4rem;
+   cursor: pointer;
+   color: #444;
+   display: none;
+}
+
+.header .navbar #close-navbar:hover {
+   -webkit-transform: rotate(90deg);
+   transform: rotate(90deg);
+}
+
+.header .navbar a {
+   margin-right: 2rem;
+   font-size: 2rem;
+   text-transform: capitalize;
+   color: #444;
+}
+
+.header .icons div {
+   cursor: pointer;
+   font-size: 2.5rem;
+   color: #444;
+   margin-left: 1.5rem;
+}
+
+.header .icons div:hover {
+   color: #0eb582;
+}
+
+#gitlogo{
+   margin-left: 1rem ;
+}
+
+::-webkit-input-placeholder  {
+   font-size: 18px;
+   line-height: 21px; 
+   color: $graytext; }
+
+// Container Conteudo e layout
+
+.top-container {
+   display: grid;
+   grid-gap: 20px;
+   grid-template-areas:
+   "showcase rghtside rghtside"
+   "showcase rghtside rghtside"
+   "showcase rghtside rghtside";
+}
+
+// Conteudo Direito
+
+.rghtside{
+   grid-area:rghtside;
+   width:85rem;
+}
+
+// Conteudo esquerdo
+
+.showcase {
+   grid-area: showcase;
+   min-height: 400px;
+   padding: 3rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   box-shadow: var(--shadow);
+}
+
+// Nome Perfil Usuário
+
+#n_me{
+   color: $light-black;
+   font-weight: 700;
+   font-size: 20px;
+   margin-top: 2rem;
+}
+
+// Descrição Perfil
+
+#descrpt {
+   margin-bottom: 2rem;
+   display: flex;
+   justify-items:center;
+   align-items: center;
+   color: $graytext;
+   font-size: 16px;
+   text-align: center;
+}
+
+// Container Links Perfil
+
+.Blu_links{
+   display:flex;
+   justify-content: start;
+   align-items: center;
+   width:100%
+}
+
+// Titulos Perfil
+
+.showcase h1 {
+   font-size: 4rem;
+   margin-bottom: 0;
+   color: var(--light);
+}
+
+.showcase p {
+   font-size: 1.3rem;
+   margin-top: 0;
+   color: $graytext;
+}
+
+// estilo Barra de pesquisa
+
+.br_sr{
+   margin-left: 2rem;
+   width: 100%;
+   font-size: 18px;
+   line-height: 21px;
+   color: $graytext;
+   display:flex;
+}
+
+.bar_srch{
+   width:100%;
+}
+
+.bar_srch_2{
+   width: 80%;
+   height: 48px;
+   background-color: $graybck;
+}
+.srch_bar{
+   width: 460px;
+   height: 50px;
+   border-bottom: solid 1px $light-color ;
+   display: flex;
+   align-items: center;
+}
+.srch_container{
+   display: flex;
+   flex-direction: row;
+   margin-top: 25px;
+   justify-content: space-between;
+   margin-left: 2rem;
+}
+
+.lupa{
+   display: flex;
+   justify-content:center;
+   align-items: center;
+}
+
+.srch_bar_mob{
+   background-color: $graybck;
+   display: flex;
+   align-items: center;
+   margin-right: 30px;
+   justify-content:space-between;
+}
+
+// fim estilo barra de pesquisa
+
+// Estilo Option Select 
+
+.select-box, .select-box_2 {
+   display: flex;
+   width: 100px;
+   flex-direction: column;
+}
+
+.select-box .options-container, .select-box_2 .options-container_2 {
+   background: $white;
+   color: $black;
+   max-height: 0;
+   width: 100%;
+   opacity: 0;
+   transition: all 0.4s;
+   border-radius: 8px;
+   overflow: hidden;
+   position: absolute;
+   order: 1;
+}
+
+.selected, .selected_2  {
+   background: $blueselect;
+   border-radius: 8px;
+   margin-bottom: 8px;
+   color: #f5f6fa;
+   position: relative;
+   width: 60px;
+   order: 0;
+   height: 50px;
+}
+.container_2{
+   margin-right: 80px;
+}
+
+.selected::after, .selected_2::after {
+   content: "";
+   background: url("img/arrow-down.svg");
+   background-size: contain;
+   background-repeat: no-repeat;
+   position: absolute;
+   height: 100%;
+   width: 32px;
+   right: 10px;
+   top: 5px;
+   transition: all 0.4s;
+}
+
+.select-box .options-container.active, 
+.select-box_2 .options-container_2.active {
+   max-height: 240px;
+   opacity: 1;
+   z-index: 3;
+   position: absolute;
+   width: 120px;
+}
+
+.select-box_2 .options-container_2.active {
+   width: 140px;
+}
+
+.select-box .options-container.active + .selected::after ,
+.select-box_2 .options-container_2.active + .selected_2::after {
+   transform: rotateX(180deg);
+   top: -6px;
+}
+
+.select-box
+.selected {
+   cursor: pointer;
+   width: 100px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   font-size: 18px;
+   border-radius: 42px;
+   height: 35px;
+}
+
+.option{
+   cursor: pointer;
+   width: 100px;
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+   font-size: 18px;
+   border-radius: 42px;
+   height: 35px;
+}
+
+.options-container_2{
+   width: 150px;
+}
+
+.select-box_2 .option_2,
+.selected_2 {
+   cursor: pointer;
+   width: 140px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   font-size: 18px;
+   border-radius: 42px;
+   height: 35px;
+}
+
+.select-box, .select-box_2 label  {
+   cursor: pointer;
+   width: 120px;
+}
+
+.btn {
+   display: inline-block;
+   margin-top: 1rem;
+   padding: 1rem 3rem;
+   font-size: 1.8rem;
+   color: #0587FF;
+   cursor: pointer;
+   text-transform: capitalize;
+}
+
+// Estilo Conteudo Tabs
+
+.strbrc_container{
+   display: flex;
+   justify-content:space-between;
+   width:12rem
+}
+.txtblu_container{
+   display: flex;
+}
+.repositories_container{
+   margin-top: 5rem;
+}
+
+#lgimg{
+   margin-right: 2rem;
+}
+
+#lgtxt{
+   margin-right: 2rem;
+   font-size: 24px;
+   line-height: 28px;
+}
+
+.txt_lnk {
+   font-style: normal;
+   font-weight: 300;
+   font-size: 18px;
+   line-height: 21px;
+}
+
+.blu_lnk{
+   font-style: normal;
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 21px;
+   margin-left: 0.5rem;
+}
+
+.blu_lnk a{
+   color:$bluelk;
+}
+
+.gry_txt{
+   font-weight: normal;
+   font-size: 14px;
+   line-height: 16px;
+   color: $graytext;
+}
+
+.Bln_num{
+   width:25px;
+	height:20px;
+	border-radius: 59px;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   border: solid 1px $graytext;
+   color: $graytext;
+   font-size: 14px;
+   line-height: 16px;
+	}
+
+.sbr_ct_3{
+   width: 3rem;
+   display: flex;
+}
+   
+.sbr_ct_2{
+   margin-right: 2rem;
+}
+   
+.sbr_ct, .sbr_ct_2, .sbr_ct_3{
+   font-size: 14px;
+   line-height: 16px;
+}
+
+// Estilo TABS
+
+.header #menu-btn {
+   display: none;
+}
+
+.ctn_opt{
+   display: flex;
+   flex-direction: row;
+}
+
+[data-tab-content] {
+   display: none;
+}
+
+.active[data-tab-content] {
+   display: block;
+}
+
+.on_tabs, .two_tabs{
+   width: 200px;
+   display: flex;
+   font-size: 18px;
+   line-height: 21px;
+}
+
+.on_tabs{
+   margin-right: 4rem;
+}
+
+.tabs {
+   display: flex;
+   justify-content: start;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   margin-bottom: 4rem;
+   margin-left: 2rem;
+
+   li {
+      color: #989898;
+      display: flex;
+      width: 100%;
+   }
+}
+
+.tab {
+   cursor: pointer;
+   padding: 10px;
+   position: relative;
+   outline:none;
+}
+
+.tab::after {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+
+   content: "";
+   height: 2px;
+   width: 0%;
+
+   background-color: $orang_anim;
+
+   transition: .4s;
+}
+
+.tab:hover::after,
+.tab.active::after {
+width: 100%;
+}
+.tab.active {
+
+   color: $black;
+   width: 100%;
+}
+
+.tab-content {
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+.logo-container{
+   text-align: center;
+
+   img{
+      height: 10rem;
+      pointer-events: none;
+   }
+}
+
+// items disabled / Items mobile
+
+.srch_bar_mob{
+   display:none;
+}
+
+// menu abaixo da foto ou links
+
+#toggle {
+   display: block;
+   width: 150px;
+   height: 30px;
+   margin: 30px auto 10px;
+      
+}
+
+#toggle span:after,
+#toggle span:before {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: -9px;
+}
+#toggle span:after{
+   top: 9px;
+}
+#toggle span {
+   display: flex;
+   flex-direction: column;
+   justify-content:center;
+   align-items: center;
+}
+
+#mob_txt{
+   display:block;
+   width:150px;
+   font-size: 14px;
+   line-height: 16px;
+   color: $bluelk;
+}
+
+ /* on activation */
+
+#toggle.on + #menu {
+   opacity: 1;
+   visibility: visible;
+}
+
+// modal
+
+.button {
+   background: #428bca;
+   padding: 1em 2em;
+   color: #fff;
+   border: 0;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.button:hover {
+   background: #3876ac;
+}
+
+.modal {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   overflow: auto;
+   border: solid 1px;
+   border-radius: 8px;
+}
+
+.modal-content {
+   margin: 10% auto;
+   width: 95%;
+   height:100%;
+   background-color: $white;
+   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+   animation-name: modalopen;
+   animation-duration: var(--modal-duration);
+}
+
+.modal-header h2,
+.modal-footer h3 {
+   margin: 0;
+}
+
+.modal-header {
+   background: $white;
+   padding: 15px;
+   color: $black;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   font-size: 24px;
+   line-height: 28px;
+   padding-left: 30px;
+   padding-top: 50px;
+}
+
+.modal-body {
+   padding: 10px 20px;
+   background: $white;
+   margin-top: 25px;
+   margin-left: 25px;
+}
+
+#modal-btn_2, #modal-btn {
+   background: $blueselect;
+   border-radius: 42px;
+   margin-bottom: 8px;
+   color: #f5f6fa;
+   position: relative;
+   width: 90px;
+   order: 0;
+   height: 50px;
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   font-size: 14px;
+   line-height: 16px;
+}
+
+#modal-btn_2{
+   width:120px;
+   margin-left: 15px;
+}
+
+.modal-footer {
+   background: $white;
+   padding: 10px;
+   text-align: center;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+}
+
+.close, .close_2 {
+   float: right;
+   font-size: 45px;
+   color: $red;
+}
+
+.close:hover,
+.close:focus, 
+.close_2:hover, 
+.close_2:focus {
+   color: #000;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+@keyframes modalopen {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+//menu mobile / links abaixo da descrição
+
+.container_mobile{
+   display:none;
+   #menu {
+      position: relative;
+      width: 300px;
+      padding: 10px;
+      margin: auto; 
+      border-radius: 16px;
+      background: $graybck;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+      /* just for this demo */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s;
+   }
+   #menu:after {
+      top: -15px;
+      left: 95px;
+      content: "";
+      display: block;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 20px solid white;
+   }
+   ul, li, li a {
+      list-style: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+   }
+   li a {
+      padding: 5px;
+      text-decoration: none;
+      transition: all .2s;
+   }
+   li a:hover,
+   li a:focus {
+      background: #1ABC9C;
+      color: #fff;
+   }
+}
+
+// select modal
+
+.multi-selector{
+   width: max-content;
+}
+
+.task,.list{
+   width: 100%;
+   background-color: white;
+   padding: 0.3rem;
+}
+.list{
+   display: block;
+}
+.down-arrow{
+   font-size: 1.2rem;
+   display: inline-block;
+   cursor: pointer;
+   transition: 0.2s linear;
+}
+.task{
+   display: block;
+   font-size: 16px;
+   line-height: 19px;
+   padding: 20px;
+}
+.task span{
+   float: right;
+   font-size: 0.6rem;
+   padding-top: 6px;
+}
+.task:hover{
+   background-color: white;
+}
+.show{
+   display: block;
+}
+.rotate180{
+   transform: rotate(-60deg);
+}
+
+// media queries 
+
+@media (max-width:1400px){
+
+   .header{
+      padding:2rem 5%;
+   }
+
+   section{
+      padding:0%;
+   }
+   .rghtside{
+      width: 100%;
+   }
+
+}
+
+@media (max-width:1399px){
+
+   section{
+      margin-top:2rem ;
+      margin-right: 3rem;
+   }
+   .showcase{
+      padding: 0;
+   }
+
+}
+
+// Ipad
+
+@media (max-width:1150px){
+
+   .srch_container {
+      display:block;
+      margin-top: 0px;
+   }
+   .gry_txt{
+      display: block;
+      justify-content:start;
+   }
+   .srch_bar {
+      margin-bottom: 3rem;
+      width: 90%;
+   }
+   .strbrc_container {
+      width: 14rem;
+   }
+   .showcase{
+      padding-left: 2rem;
+   }
+   .btn {
+      padding: 0.5rem 1.5rem;
+   }
+   .top-container{
+      padding-bottom: 50px;
+   }
+}
+
+// Iphone 13 MAX
+
+@media (max-width:700px){
+
+   .header{
+      display:none;
+   }
+   .ctn_opt {
+      display:none;
+   }
+
+   .container_dsk{
+      display:none;
+   }
+
+   .container_mobile{
+      display:block;
+   }
+   .rghtside{
+      grid-area:rghtside;
+      margin-left: 4rem;
+   }
+
+   .srch_bar_mob{
+      display:flex;
+   }
+
+   .srch_bar{
+      display:none;
+   }
+
+   .showcase {
+      grid-area: showcase;
+      margin-top: 8rem;
+   }
+   .Blu_links {
+      justify-content:start;
+   }
+   .tabs {
+      justify-content:center;
+   }
+   .top-container {
+      
+      justify-content: center;
+      display: grid;
+      grid-gap: 20px;
+      grid-template-areas:
+         "showcase"
+         "showcase"
+         "showcase"
+         "rghtside"
+         "rghtside"
+         "rghtside"
+         "rghtside"
+         "rghtside"
+         "rghtside";
+   }
+}
+
+// Ajuste quebra de layout para dispositivos menores
+
+@media (max-width:450px){
+   .rghtside {
+      margin-left: 10%;
+   }
+   .showcase{
+      padding-left: 6rem;
+   }
+}
+
+// Ajuste quebra de layout para dispositivos menores
+
+@media (max-width:400px){
+   .rghtside {
+      margin-left: 15%;
+   }
+   .showcase{
+      padding-left: 8rem;
+   }
+}

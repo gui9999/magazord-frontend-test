@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>GitHub</title>
+
+   <!-- Favicon Git-hub  -->
+   <link rel="icon" type="imagem/png" href="/images/GitHub-favicon.png" />
+
+   <!-- Mobile Anim  -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- CSS  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- Barra superior com a logo  -->
+
+<header class="header">
+   <a href="#" class="logo">
+      <div id="lgimg">
+      <img src="images/Vector.png">
+      <img id="gitlogo" src="images/github logo.png">
+      </div>
+      <div id="lgtxt">/</div> 
+      <div> Profile </div>
+   </a>
+</header>
+
+<!-- header section ends -->
+
+<!-- Conteudo -->
+<section class="top-container">
+   <section class="showcase"> <!-- Seção localizada no lado esquerdo -->
+         <div id="photo_img">
+            <img src="images/GbrImg.png" width="220px" height="185px" alt="">  <!-- Foto perfil -->
+         </div>
+         <div id="n_me">
+            <h2>Gabriel Cordeiro</h2>  <!-- Nome Perfil -->
+         </div>
+         <div id="descrpt">Head development team Front-End <br> Magazord - Tagged (#BZ)</div> <!-- descrição perfil -->
+         <div class="container_dsk"> <!-- Links Perfil -->
+            <div class="Blu_links">
+               <a href="#" class="btn"><img width="18px" height="18px" src="images/ve11.png" alt="">&nbsp;&nbsp;Magazord - plataforma</a>
+            </div>
+            <div class="Blu_links">
+               <a href="#" class="btn"><img src="images/ve2.svg" alt="">&nbsp;&nbsp;Rio do Sul - SC</a>
+            </div>
+            <div class="Blu_links">
+               <a href="#" class="btn"><img width="12px" height="16px" src="images/ve333.png" alt="">&nbsp;&nbsp;Cordas.hub.uok</a>
+            </div>
+            <div class="Blu_links">
+               <a href="#" class="btn"><img src="images/ve4.svg" alt="">&nbsp;&nbsp;Gabriel.s.cordeiro</a>
+            </div>
+         </div>
+         <div class="container_mobile">  
+            <a href="#menu" id="toggle" > <!-- Evento para mostrar os links na versão mobile -->
+               <span id="mob_txt">Informações Adicionais<img width="25px" height="25px" src="images/Arrw_dn.svg"></span>
+            </a>
+            <div id="menu"> <!-- Links Perfil Mobile -->
+               <ul>
+                  <li><div class="Blu_links"><a href="#" class="btn">
+                     <img width="18px" height="18px" src="images/ve11.png" alt="">&nbsp;&nbsp;Magazord - plataforma</a>
+                  </div></li>
+                  <li><div class="Blu_links">
+                     <a href="#" class="btn"><img src="images/ve2.svg" alt="">&nbsp;&nbsp;Rio do Sul - SC</a>
+                  </div></li>
+                  <li><div class="Blu_links">
+                     <a href="#" class="btn"><img width="12px" height="16px" src="images/ve333.png" alt="">&nbsp;&nbsp;Cordas.hub.uok</a>
+                  </div></li>
+                  <li><div class="Blu_links">
+                     <a href="#" class="btn"><img src="images/ve4.svg" alt="">&nbsp;&nbsp;Gabriel.s.cordeiro</a>
+                  </div></li>
+               </ul>
+            </div>
+         </div>
+   </section>
+   <div class="rghtside"> <!-- Seção lado direito "desktop" -->
+      <ul class="tabs"> <!-- Tab Container-pai -->
+         <div class="on_tabs" onclick="before()"> <!-- tab primariamente ativa -->
+            <li data-tab-target="#home" class="active tab" onclick="before_2()">
+               <img id="repo_img" src="images/repo_vector.svg">&nbsp;&nbsp;Repositories&nbsp;&nbsp;
+               <div class="Bln_num">81</div>
+            </li>
+         </div>
+         <div class="two_tabs" onclick="afterr()"> <!-- Evento para troca de tabs -->
+            <li data-tab-target="#pricing" class="tab" onclick="afterr_2()">
+               <img id="str_img" src="images/str_repo.svg">&nbsp;&nbsp;Starred&nbsp;&nbsp;
+               <div class="Bln_num">12</div>
+            </li>
+         </div>
+      </ul>
+      <div class="srch_container"> <!-- Container que engloba a sessão das opções e pesquisas -->
+         <div class="srch_bar"> <!-- Container pai da barra de pesquisa -->
+            <div class="lupa">
+               <img width="25px" height="25px" src="images/lupa.png" alt=""> <!-- Imagem padrão de lupa -->
+            </div> 
+            <div class="br_sr">
+               <input type="text" class="bar_srch" placeholder="Search here"> <!-- Input da barra de pesquisa -->
+            </div>
+         </div>
+         <div class="srch_bar_mob"> <!-- Container pai da barra de pesquisa na versão Mobile -->
+            <div> <!-- div pai do modal -->
+               <button id="modal-btn" class="button"> <!-- botão de evento para abrir o modal -->
+                  <img src="images/Down_arrw.png" alt="">&nbsp;Type
+               </button> 
+               <div id="my-modal" class="modal"> <!-- id para script modal -->
+                  <div class="modal-content"> <!-- Conteudo do modal -->
+                     <div class="modal-header"> <!-- Parte superior do modal  -->
+                        <span class="close">&times;</span> <!-- Tag de fechamento modal -->
+                        <h2>Type</h2> <!-- Titulo modal -->
+                     </div>
+                     <div class="modal-body">
+                           <!-- checkboxes e options -->
+                           <div class="list">
+                              <label for="task1" class="task">
+                                 <input type="checkbox" name="" id="task1">
+                                 &nbsp;All
+                              </label>
+                              <label for="task2" class="task">
+                                 <input type="checkbox" name="" id="task2">
+                                 &nbsp;Sources
+                              </label>
+                              <label for="task3" class="task">
+                                 <input type="checkbox" name="" id="task3">
+                                    &nbsp;Forks
+                              </label>
+                              <label for="task4" class="task">
+                                 <input type="checkbox" name="" id="task4">
+                                 &nbsp;Archived
+                              </label>
+                              <label for="task5" class="task">
+                                 <input type="checkbox" name="" id="task5">
+                                 &nbsp;Mirrors
+                              </label>
+                           </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         <div>
+               <button id="modal-btn_2" class="button"> <!-- botão de evento para abrir o modal -->
+                  <img src="images/Down_arrw.png" alt="">&nbsp;Language
+               </button>
+                  <div id="my-modal_2" class="modal"> <!-- id para script modal -->
+                     <div class="modal-content"> <!-- Conteudo do modal -->
+                        <div class="modal-header"> <!-- Parte superior do modal  -->
+                           <span class="close_2">&times;</span> <!-- Tag de fechamento modal -->
+                           <h2>Language</h2> <!-- Titulo modal -->
+                        </div>
+                        <div class="modal-body">
+                              <!---------List of checkboxes and options----------->
+                              <div class="list">
+                                 <label for="task1" class="task">
+                                    <input type="checkbox" name="" id="task6">
+                                    &nbsp;All
+                                 </label>
+                                 <label for="task2" class="task">
+                                    <input type="checkbox" name="" id="task7">
+                                    &nbsp;Java
+                                 </label>
+                                 <label for="task3" class="task">
+                                    <input type="checkbox" name="" id="task8">
+                                    &nbsp;TypeScript
+                                 </label>
+                                 <label for="task4" class="task">
+                                    <input type="checkbox" name="" id="task9">
+                                    &nbsp;HTML
+                                 </label>
+                                 <label for="task5" class="task">
+                                    <input type="checkbox" name="" id="task10">
+                                    &nbsp;CSS
+                                 </label>
+                              </div>
+                        </div>
+                     </div>
+                  </div>               
+            </div>
+            <div class="br_sr"> <!-- Container pai barra de pesquisa Mobile  -->
+               <input type="text" class="bar_srch_2" > <!-- Input na versão mobile -->
+               <div class="lupa">
+                  <div class="blue_lp"><!-- Lupa versão mobile -->
+                     <img width="30px" height="30px" src="images/lupa_blue.jpg" alt="">
+                  </div> 
+               </div> 
+            </div>
+         </div>
+         <div class="ctn_opt"> <!-- Section options -->
+            <div class="container"> <!-- Container type options -->     
+               <div class="select-box"> 
+                  <div class="options-container">   
+                     <div class="option"> <!-- Checkbox - option -->
+                        <input type="checkbox" name="category" />
+                        <label for="music">&nbsp;All</label>
+                     </div>
+         
+                     <div class="option">
+                        <input type="checkbox" name="category" />
+                        <label for="travel">&nbsp;Sources</label>
+                     </div>
+         
+                     <div class="option">
+                        <input type="checkbox" name="category" />
+                        <label for="sports">&nbsp;Forks</label>
+                     </div>
+         
+                     <div class="option">
+                        <input type="checkbox" name="category" />
+                        <label for="news">&nbsp;Archived</label>
+                     </div>
+         
+                     <div class="option">
+                        <input type="checkbox" name="category" />
+                        <label for="tutorials">&nbsp;Mirrors</label>
+                     </div>
+                  </div>
+                  <div class="selected">
+                     <img src="images/Down_arrw.png" alt="">&nbsp; Type
+                  </div>
+               </div>
+            </div>
+            <div class="container_2">  <!-- Container language options -->       
+               <div class="select-box_2">
+                  <div class="options-container_2">
+                     <div class="option_2"> <!-- Checkbox - option - Language -->
+                        <input type="checkbox" name="category" />
+                        <label for="music">&nbsp;All</label>
+                     </div>
+         
+                     <div class="option_2">
+                        <input type="checkbox" name="category" />
+                        <label for="travel">&nbsp;Java</label>
+                     </div>
+         
+                     <div class="option_2">
+                        <input type="checkbox" name="category" />
+                        <label for="sports">&nbsp;TypeScript</label>
+                     </div>
+         
+                     <div class="option_2">
+                        <input type="checkbox" name="category" />
+                        <label for="news">&nbsp;HTML</label>
+                     </div>
+         
+                     <div class="option_2">
+                        <input type="checkbox" name="category" />
+                        <label for="tutorials">&nbsp;CSS</label>
+                     </div>
+                  </div>
+                  <div class="selected_2"> <!-- Selected - option -->
+                     <img src="images/Down_arrw.png" alt="">&nbsp; Language
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="tab_cnt_container"> <!-- Section - Tab_ Container -->
+         <div class="tab-content"> <!-- div-pai do conteudo da tab -->
+            <div id="home" data-tab-content class="active"> <!-- Conteudo ativo do tab -->
+               <div class="repositories_container"> <!-- Container pai de cada frame -->
+                  <div class="txtblu_container"> <!-- Titulo com link -->
+                     <div class="txt_lnk">Node /</div> 
+                     <div class="blu_lnk"><a href="#">Release</a></div>
+                  </div><br>
+                  <p class="gry_txt">Node.js Foundation Release Working Group.</p><br> <!-- Descrição Repositório -->
+                  <div class="strbrc_container">
+                     <div class="sbr_ct"><img src="images/StrVector.svg" alt="Stars">&nbsp;&nbsp;1.569</div> <!-- icons  -->
+                     <div class="sbr_ct"><img src="images/brchVector.svg" alt="Branch">&nbsp;&nbsp;142</div>
+                  </div>
+               </div>
+               <div class="repositories_container">
+                  <div class="txtblu_container">
+                     <div class="txt_lnk">Cordeiro /</div> 
+                     <div class="blu_lnk"><a href="#">Angular Choosen</a></div>
+                  </div><br>
+                  <p class="gry_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis vel etiam tellus velit pellentesque scelerisque ut risus.</p><br>
+                  <div class="strbrc_container">
+                     <div class="sbr_ct"><img src="images/StrVector.svg" alt="Stars">&nbsp;&nbsp;726</div>
+                     <div class="sbr_ct"><img src="images/brchVector.svg" alt="Branch">&nbsp;&nbsp;91</div>
+                  </div>
+               </div>
+               <div class="repositories_container">
+                  <div class="txtblu_container">
+                     <div class="txt_lnk">Teste / </div> 
+                     <div class="blu_lnk"><a href="#">App Release 1.03</a></div>
+                  </div><br>
+                  <p class="gry_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis vel etiam tellus velit pellentesque scelerisque<br>
+                     ut risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis vel etiam tellus velit pellentesque </p><br>
+                  <div class="strbrc_container">
+                     <div class="sbr_ct"><img src="images/StrVector.svg" alt="Stars">&nbsp;&nbsp;9.327</div>
+                     <div class="sbr_ct"><img src="images/brchVector.svg" alt="Branch">&nbsp;&nbsp;562</div>
+                  </div>
+               </div>
+            </div>
+            <div id="pricing" data-tab-content> <!-- Conteudo de evento do tab -->
+               <div class="repositories_container">
+                  <div class="txtblu_container">
+                     <div class="txt_lnk">Chamber 5.62 /</div> 
+                     <div class="blu_lnk"><a href="#">Smite and Ignite</a></div>
+                  </div><br>
+                  <p class="gry_txt">Node.js Foundation Release Working Group.</p><br>
+                  <div class="strbrc_container">
+                     <div class="sbr_ct">C++</div>
+                     <div class="sbr_ct"><img src="images/brchVector.svg" alt="Branch">&nbsp;&nbsp;526</div>
+                  </div>
+               </div>
+               <div class="repositories_container">
+                  <div class="txtblu_container">
+                     <div class="txt_lnk">BNB /</div> 
+                     <div class="blu_lnk"><a href="#">Vandal</a></div>
+                  </div><br>
+                  <p class="gry_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis vel etiam tellus velit pellentesque scelerisque ut risus.</p><br>
+                  <div class="strbrc_container">
+                     <div class="sbr_ct">Python</div>
+                  </div>
+               </div>
+               <div class="repositories_container">
+                  <div class="txtblu_container">
+                     <div class="txt_lnk">llikatsni /</div> 
+                     <div class="blu_lnk"><a href="#">Operator</a></div>
+                  </div><br>
+                  <p class="gry_txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis vel etiam tellus velit pellentesque scelerisque<br>
+                     ut risus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis vel etiam tellus velit pellentesque </p><br>
+                  <div class="strbrc_container">
+                     <div class="sbr_ct_2" >JavaScript&nbsp;</div>
+                     <div class="sbr_ct_3"><img src="images/brchVector.svg" alt="Branch">&nbsp;&nbsp;312</div>
+                  </div>
+               </div>
+            </div>
+         </div>  
+      </div>
+   </div>
+</section>
+
+<!-- Section conteudo ends -->
+
+<!-- Scripts files  -->
+
+<script src="js/script.js"></script> <!-- Scripts links mobile  -->
+
+<script src="js/script_tab.js"></script> <!-- Scripts tabs  -->
+
+<script src="js/script_slct.js"></script> <!-- Scripts select  -->
+
+<script src="js/script_repo.js"></script> <!-- Scripts Switch images tabs  -->
+
+<script src="js/script_modal.js"></script> <!-- Scripts modal -->
+
+<!-- Scripts files end -->
+</body>
+</html>
